@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -14,16 +15,7 @@ public class Paddle : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    protected void FixedUpdate()
-    {
-        if (moveDirection == Vector2.zero)
-        {
-            _rigidbody.velocity = Vector2.zero;
-        }
-        else
-        {
-            _rigidbody.velocity = new Vector2(0, moveSpeed * moveDirection.y);
-        }
-    }
+
     
+
 }
