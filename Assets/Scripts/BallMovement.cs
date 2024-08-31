@@ -24,5 +24,17 @@ public class BallMovement : MonoBehaviour
         float y = Random.value < 0.5f ? Random.Range(-1.0f, -0.5f) : Random.Range(0.5f, 1.0f);
 
         Vector2 direction = new Vector2(x, y);
-        _rigidBody.AddForce(direction * ballSpeed);    }
+        _rigidBody.AddForce(direction * ballSpeed);    
+    }
+
+    public void AddForce(Vector2 force)
+    {
+        _rigidBody.AddForce(force);
+    }
+
+    public void ResetPosition()
+    {
+        _rigidBody.position = Vector3.zero;
+        _rigidBody.velocity = Vector3.zero;
+    }
 }
