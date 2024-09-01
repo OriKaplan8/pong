@@ -14,10 +14,11 @@ public class BallMovement : MonoBehaviour
     }
     void Start()
     {
+        ResetPosition();
         AddStartingForce();
     }
 
-    private void AddStartingForce()
+    public void AddStartingForce()
     {
         float x = Random.value < 0.5f ? -1.0f : 1.0f;
 
