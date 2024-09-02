@@ -15,7 +15,23 @@ public class Paddle : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
+    public void ResetPosition()
+    {
+        _rigidbody.position = new Vector2(_rigidbody.position.x, 0.0f);
+        _rigidbody.velocity = Vector2.zero;
+    }
 
-    
+    public void LockPosition()
+    {
+        _rigidbody.constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
+
+    }
+
+    public void UnlockPosition()
+    {
+     
+        _rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+    }
+
 
 }

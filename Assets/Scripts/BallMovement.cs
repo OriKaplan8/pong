@@ -38,4 +38,15 @@ public class BallMovement : MonoBehaviour
         _rigidBody.position = Vector3.zero;
         _rigidBody.velocity = Vector3.zero;
     }
+
+    public void LockPosition()
+    {
+        _rigidBody.constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
+
+    }
+
+    public void UnlockPosition()
+    {
+        _rigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
 }
